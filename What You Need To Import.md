@@ -1,4 +1,4 @@
-<h1>Install This LIbraries</h1>
+<h1>Install This Libraries</h1>
 
 
      pip install mediapipe
