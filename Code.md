@@ -4,8 +4,8 @@
          
     import mediapipe as mp 
     from pynput.keyboard import Key, Controller 
-
-    # Initialize Keyboard Controller
+    # Made By Ved Patel...
+    # Controlling The Keyboard
     keyboard = Controller()
 
     mp_draw = mp.solutions.drawing_utils # Function to Draw Landmarks over Hand
@@ -13,7 +13,7 @@
 
     fingerTipIds = [4, 8, 12, 16, 20]
 
-    # Capturing the Video from the Camera
+    # Accessing The Camara
     video = cv.VideoCapture(0)
 
     # Initializing the Hand Detection Function
