@@ -1,26 +1,25 @@
-<h1>Python Code</h1>
-          
-          
-         
-    import mediapipe as mp 
-    from pynput.keyboard import Key, Controller 
-    # Made By Ved Patel...
-    # Controlling The Keyboard
-    keyboard = Controller()
+import cv2 as cv
+import mediapipe as mp 
+from pynput.keyboard import Key, Controller 
 
-    mp_draw = mp.solutions.drawing_utils # Function to Draw Landmarks over Hand
-    mp_hand = mp.solutions.hands # Hand Detection Function
+# Controlling The Keyboard
+keyboard = Controller()
 
-    fingerTipIds = [4, 8, 12, 16, 20]
+mp_draw = mp.solutions.drawing_utils  # Function to Draw Landmarks over Hand
+mp_hand = mp.solutions.hands  # Hand Detection Function
 
-    # Accessing The Camara
-    video = cv.VideoCapture(0)
+fingerTipIds = [4, 8, 12, 16, 20]
 
-    # Initializing the Hand Detection Function
-    hands = mp_hand.Hands(min_detection_confidence = 0.5, min_tracking_confidence = 0.5)
+# Accessing The Camera
+video = cv.VideoCapture(0)
 
-    while True:
-      success, image = video.read()
+# Initializing the Hand Detection Function
+hands = mp_hand.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+
+while True:
+    success, image = video.read()
+    if not success:
+        break
 
     # Converting the Image to RGB
     image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
@@ -36,17 +35,16 @@
     # List to store the Landmark's Coordinates
     landmarks_list = []
 
-    # If Landmarks Detected i.e., Hand Detected Sucessfully
+    # If Landmarks Detected i.e., Hand Detected Successfully
     if results.multi_hand_landmarks:
         hand_landmarks = results.multi_hand_landmarks[-1]
 
         for index, lm in enumerate(hand_landmarks.landmark):
-            h, w, c = image.shape # Height, Width, Channels
-            cx, cy = int(lm.x*w), int(lm.y*h)
+            h, w, c = image.shape  # Height, Width, Channels
+            cx, cy = int(lm.x * w), int(lm.y * h)
             landmarks_list.append([index, cx, cy])
 
         # Drawing the Landmarks for only One Hand
-        # Landmarks will be drawn for the Hand which was Detected First
         mp_draw.draw_landmarks(image, hand_landmarks, mp_hand.HAND_CONNECTIONS)
 
     # Stores 1 if finger is Open and 0 if finger is closed
@@ -54,23 +52,21 @@
 
     if len(landmarks_list) != 0:
         for tipId in fingerTipIds:
-            if tipId == 4: # That is the thumb
+            if tipId == 4:  # Thumb
                 if landmarks_list[tipId][1] > landmarks_list[tipId - 1][1]:
                     fingers_open.append(1)
-                else: 
+                else:
                     fingers_open.append(0)
             else:
                 if landmarks_list[tipId][2] < landmarks_list[tipId - 2][2]:
                     fingers_open.append(1)
-                else: 
+                else:
                     fingers_open.append(0)
 
-    # Counts the Number of Fingers Open
-    count_fingers_open = fingers_open.count(1)
+        # Counts the Number of Fingers Open
+        count_fingers_open = fingers_open.count(1)
 
-    # If Hand Detected
-    if results.multi_hand_landmarks != None:
-        # If All Fingers Closed --> Break
+        # If Hand Detected
         if count_fingers_open == 0:
             cv.rectangle(image, (20, 300), (270, 425), (0, 255, 0), cv.FILLED)
             cv.putText(image, "BRAKE", (45, 375), cv.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 5)
@@ -93,10 +89,10 @@
 
     # Show the Video
     cv.imshow("Frame", image)
-    
+
     # Close the Video if "q" key is pressed
     if cv.waitKey(1) & 0xFF == ord('q'):
         break
 
-    video.release()
-    cv.destroyAllWindows()
+video.release()
+cv.destroyAllWindows()
