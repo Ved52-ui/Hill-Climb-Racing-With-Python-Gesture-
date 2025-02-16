@@ -1,23 +1,24 @@
 
    import cv2 as cv
-import mediapipe as mp 
-from pynput.keyboard import Key, Controller 
+   import cv2 as cv
+   import mediapipe as mp 
+   from pynput.keyboard import Key, Controller 
 
-# Controlling The Keyboard
-keyboard = Controller()
+   # Controlling The Keyboard
+   keyboard = Controller()
 
-mp_draw = mp.solutions.drawing_utils  # Function to Draw Landmarks over Hand
-mp_hand = mp.solutions.hands  # Hand Detection Function
+   mp_draw = mp.solutions.drawing_utils  # Function to Draw Landmarks over Hand
+   mp_hand = mp.solutions.hands  # Hand Detection Function
 
-fingerTipIds = [4, 8, 12, 16, 20]
+   fingerTipIds = [4, 8, 12, 16, 20]
 
-# Accessing The Camera
-video = cv.VideoCapture(0)
+   # Accessing The Camera
+   video = cv.VideoCapture(0)
 
-# Initializing the Hand Detection Function
-hands = mp_hand.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
+   # Initializing the Hand Detection Function
+   hands = mp_hand.Hands(min_detection_confidence=0.5, min_tracking_confidence=0.5)
 
-while True:
+   while True:
     success, image = video.read()
     if not success:
         break
@@ -48,8 +49,8 @@ while True:
         # Drawing the Landmarks for only One Hand
         mp_draw.draw_landmarks(image, hand_landmarks, mp_hand.HAND_CONNECTIONS)
 
-    # Stores 1 if finger is Open and 0 if finger is closed
-    fingers_open = []
+        # Stores 1 if finger is Open and 0 if finger is closed
+         fingers_open = []
 
     if len(landmarks_list) != 0:
         for tipId in fingerTipIds:
@@ -97,3 +98,5 @@ while True:
 
 video.release()
 cv.destroyAllWindows()
+
+ 
