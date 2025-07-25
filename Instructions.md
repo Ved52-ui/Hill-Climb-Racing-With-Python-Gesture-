@@ -33,10 +33,6 @@ By detecting your **palm state (open or closed)**, it simulates:
 
 ---
 
-## 🛠️ Installation
 
-### Step 1: Clone or Download this Repository
 
-```bash
-git clone https://github.com/your-username/hill-climb-gesture.git
-cd hill-climb-gesture
+
