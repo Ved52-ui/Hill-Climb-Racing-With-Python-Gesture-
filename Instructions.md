@@ -5,9 +5,7 @@ Open your palm to **accelerate**, close your palm to **brake** — just like mag
 
 ---
 
-## 📸 Demo
 
-![Demo Preview](https://via.placeholder.com/800x400.png?text=Demo+Video+Coming+Soon)
 
 ---
 
