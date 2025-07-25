@@ -1,9 +1,44 @@
-# Hill-Climb-Racing<br>
-<h2>STEP-1</h2><br>
-<p>You Only Need To Copy My Python Code And Past Into Your Python File That Code.. </p><br>
-<h2>STEP-2</h2><bR>
-<p>Open Hill Climb Racing Game And Run That Code</p><br>
-<h3>STEP-3</h3><br>
-<p>Open Your Palm For Gas And Close Your Palm For Brake..</p>
+# 🏎️ Hill Climb Racing - Hand Gesture Controller using Python & MediaPipe
 
+Control the **Hill Climb Racing** game with your hand gestures in real time using your webcam!  
+Open your palm to **accelerate**, close your palm to **brake** — just like magic! 🧙‍♂️💥
 
+---
+
+## 📸 Demo
+
+![Demo Preview](https://via.placeholder.com/800x400.png?text=Demo+Video+Coming+Soon)
+
+---
+
+## 🚀 Features
+
+✅ Real-time hand gesture detection  
+✅ Works on any PC with a webcam  
+✅ Play Hill Climb Racing without touching your keyboard  
+✅ Fun, innovative, and simple to use  
+✅ No external hardware needed
+
+---
+
+## 🧠 How It Works
+
+This project uses:
+
+- 📷 **OpenCV** – for webcam access  
+- ✋ **MediaPipe** – for palm detection and hand tracking  
+- 🎮 **Pynput** – to simulate keyboard presses (for gas and brake)
+
+By detecting your **palm state (open or closed)**, it simulates:
+- **Open palm** → Press the **gas (right arrow)** key
+- **Closed fist** → Press the **brake (left arrow)** key
+
+---
+
+## 🛠️ Installation
+
+### Step 1: Clone or Download this Repository
+
+```bash
+git clone https://github.com/your-username/hill-climb-gesture.git
+cd hill-climb-gesture
