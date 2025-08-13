@@ -1,7 +1,7 @@
 import cv2 as cv
 import mediapipe as mp 
 from pynput.keyboard import Key, Controller 
-#vfkvokvvrkvmrrmvlrrvkr vvvkrvrov vmrrkvkrrvk rkvrrkvrkrv jrifjejivhrir gjrggriggj j;sjiv rhujrifhu vrri kfjijfijfi fjrijri
+#vfkvokvvrkvmrrmvlrrvkr vvvkrvrov vmrrkvkrrvk rkvrrkvrkrv jrifjejivhrir gjrggriggj j;sjiv rhujrifhu vrri kfjijfijfi fjrijr
 # Controlling The Keyboard
 keyboard = Controller()
 
