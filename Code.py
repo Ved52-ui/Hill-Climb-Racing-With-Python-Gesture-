@@ -1,4 +1,4 @@
-aakdngkdngkfn
+akdngkdngkfn
 import cv2 as cv
 import mediapipe as mp 
 from pynput.keyboard import Key, Controller 
