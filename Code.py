@@ -3,7 +3,7 @@ import mediapipe as mp
 from pynput.keyboard import Key, Controller 
 # Controlling The Keyboard
 keyboard = Controller()
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
 mp_draw = mp.solutions.drawing_utils  # Function to Draw Landmarks over Hand
 mp_hand = mp.solutions.hands  # Hand Detection Function
 
