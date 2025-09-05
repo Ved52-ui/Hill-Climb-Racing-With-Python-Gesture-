@@ -5,7 +5,7 @@ Open your palm to **accelerate**, close your palm to **brake** — just like mag
 
 ---
 
-–---_----
+–---_---
 
 ---
 
