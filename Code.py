@@ -6,7 +6,7 @@ keyboard = Controller()
 jgh
 mp_draw = mp.solutions.drawing_utils  # Function to Draw Landmarks over Hand
 mp_hand = mp.solutions.hands  # Hand Detection Function
-csvvev
+csvve
 fingerTipIds = [4, 8, 12, 16, 20]
 
 # Accessing The Camera
