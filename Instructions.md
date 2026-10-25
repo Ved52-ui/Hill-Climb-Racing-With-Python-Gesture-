@@ -4,7 +4,7 @@ Control the **Hill Climb Racing** game with your hand gestures in real time usin
 Open your palm to **accelerate**, close your palm to **brake** — just like magic! 🧙‍♂️💥
 
 ---
-bhb
+bh
 
 
 ---
